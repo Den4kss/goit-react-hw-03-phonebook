@@ -3,8 +3,6 @@ import css from './App.module.css';
 import { nanoid } from 'nanoid';
 import ContactForm from 'components/ContactForm';
 import ContactList from 'components/ContactList';
-
-
 import Filter from 'components/Filter';
 
 class App extends Component {
@@ -17,7 +15,7 @@ class App extends Component {
   ],
     filter: '',
   };
-   componentDidMount() {
+    componentDidMount() {
     const contacts = localStorage.getItem('contacts');
     if (contacts) {
       this.setState({ contacts: JSON.parse(contacts) });
@@ -40,6 +38,7 @@ class App extends Component {
       };
     });
   };
+  
   removeName = idx => {
     this.setState(prevState => {
       let newContacts = [];
